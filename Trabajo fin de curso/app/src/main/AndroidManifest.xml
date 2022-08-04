@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/ProyectoFinDeCurso">
         <activity
+            android:name=".GameIA"
+            android:exported="false" />
+        <activity
             android:name=".InicioActivity"
             android:exported="true" />
         <activity
