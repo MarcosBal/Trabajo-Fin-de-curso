@@ -1,0 +1,94 @@
+[
+    {
+        "merged": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/build/intermediates/merged_res/debug/layout_activity_inicio.xml.flat",
+        "source": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/src/main/res/layout/activity_inicio.xml"
+    },
+    {
+        "merged": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/build/intermediates/merged_res/debug/drawable_ic_person.xml.flat",
+        "source": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/src/main/res/drawable/ic_person.xml"
+    },
+    {
+        "merged": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/build/intermediates/merged_res/debug/drawable_splash_background.xml.flat",
+        "source": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/src/main/res/drawable/splash_background.xml"
+    },
+    {
+        "merged": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/build/intermediates/merged_res/debug/drawable_ic_launcher_background.xml.flat",
+        "source": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/src/main/res/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/build/intermediates/merged_res/debug/drawable_ic_ia.xml.flat",
+        "source": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/src/main/res/drawable/ic_ia.xml"
+    },
+    {
+        "merged": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/build/intermediates/merged_res/debug/drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/src/main/res/drawable-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/build/intermediates/merged_res/debug/layout_activity_main.xml.flat",
+        "source": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/build/intermediates/merged_res/debug/layout_activity_game_ia.xml.flat",
+        "source": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/src/main/res/layout/activity_game_ia.xml"
+    },
+    {
+        "merged": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    }
+]

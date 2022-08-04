@@ -1,0 +1,9 @@
+com/riberadeltajo/marcos/proyectofindecurso/GameIA.java
+ com.riberadeltajo.marcos.proyectofindecurso.GameIA
+com/riberadeltajo/marcos/proyectofindecurso/InicioActivity.java
+ com.riberadeltajo.marcos.proyectofindecurso.InicioActivity
+com/riberadeltajo/marcos/proyectofindecurso/BuildConfig.java
+ com.riberadeltajo.marcos.proyectofindecurso.BuildConfig
+com/riberadeltajo/marcos/proyectofindecurso/MainActivity.java
+ com.riberadeltajo.marcos.proyectofindecurso.MainActivity
+ com.riberadeltajo.marcos.proyectofindecurso.MainActivity$1
