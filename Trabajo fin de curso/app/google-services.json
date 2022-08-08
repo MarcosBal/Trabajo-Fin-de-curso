@@ -1,33 +1,42 @@
 {
   "project_info": {
-    "project_number": "797544763089",
-    "project_id": "fir-tictactoe-17f48",
-    "storage_bucket": "fir-tictactoe-17f48.appspot.com"
+    "project_number": "791359106289",
+    "firebase_url": "https://tictactoebluet-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "tictactoebluet",
+    "storage_bucket": "tictactoebluet.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:797544763089:android:25c831f9af906f8236fff0",
+        "mobilesdk_app_id": "1:791359106289:android:469367579d5029dae1cd50",
         "android_client_info": {
           "package_name": "com.riberadeltajo.marcos.proyectofindecurso"
         }
       },
       "oauth_client": [
         {
-          "client_id": "797544763089-km4p65219qlffkjlhhvkdmklkbkuvjkr.apps.googleusercontent.com",
+          "client_id": "791359106289-7rfou5atkhkv9kub2rt6jtjbtuv6phgc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.riberadeltajo.marcos.proyectofindecurso",
+            "certificate_hash": "1e46f052ec800abc3dc5591c4aeee4c17435ac8e"
+          }
+        },
+        {
+          "client_id": "791359106289-qakjm9f4kt5g4sqaau405u7vc14kb8i3.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA1l7Wy_Hxn13_6iUvvXlKCWqNRhclS2mQ"
+          "current_key": "AIzaSyC5I2YRRHEcBLFfa5Vpzv-sACMTxSLWgDc"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "797544763089-km4p65219qlffkjlhhvkdmklkbkuvjkr.apps.googleusercontent.com",
+              "client_id": "791359106289-qakjm9f4kt5g4sqaau405u7vc14kb8i3.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

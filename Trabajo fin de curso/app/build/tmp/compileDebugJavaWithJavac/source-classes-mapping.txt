@@ -7,3 +7,5 @@ com/riberadeltajo/marcos/proyectofindecurso/BuildConfig.java
 com/riberadeltajo/marcos/proyectofindecurso/MainActivity.java
  com.riberadeltajo.marcos.proyectofindecurso.MainActivity
  com.riberadeltajo.marcos.proyectofindecurso.MainActivity$1
+ com.riberadeltajo.marcos.proyectofindecurso.MainActivity$2
+ com.riberadeltajo.marcos.proyectofindecurso.MainActivity$3

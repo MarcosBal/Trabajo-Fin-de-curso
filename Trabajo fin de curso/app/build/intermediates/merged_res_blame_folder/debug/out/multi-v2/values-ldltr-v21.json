@@ -4,7 +4,7 @@
             "outputFile": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ldltr-v21/values-ldltr-v21.xml",
             "map": [
                 {
-                    "source": "/Users/santiago/.gradle/caches/transforms-3/df7a822ae5bba410759a2028ca41fad9/transformed/appcompat-1.4.1/res/values-ldltr-v21/values-ldltr-v21.xml",
+                    "source": "/Users/santiago/.gradle/caches/transforms-3/5dc4257066e51bca8dee945421699c54/transformed/appcompat-1.4.1/res/values-ldltr-v21/values-ldltr-v21.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

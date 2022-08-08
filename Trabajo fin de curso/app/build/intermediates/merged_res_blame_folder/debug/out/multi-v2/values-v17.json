@@ -4,7 +4,7 @@
             "outputFile": "/Users/santiago/Desktop/marcos/Trabajo fin de curso/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v17/values-v17.xml",
             "map": [
                 {
-                    "source": "/Users/santiago/.gradle/caches/transforms-3/df7a822ae5bba410759a2028ca41fad9/transformed/appcompat-1.4.1/res/values-v17/values-v17.xml",
+                    "source": "/Users/santiago/.gradle/caches/transforms-3/5dc4257066e51bca8dee945421699c54/transformed/appcompat-1.4.1/res/values-v17/values-v17.xml",
                     "from": {
                         "startLines": "2,5,9,12,15,18,22,25,29,33,37,40,43,46,50,53,57",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
