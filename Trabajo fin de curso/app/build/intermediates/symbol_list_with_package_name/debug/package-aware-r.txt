@@ -2704,6 +2704,8 @@ id collapseActionView
 id compress
 id confirm_button
 id constraint
+id constraintIA
+id constraintLayout
 id constraintPvIA
 id constraintPvP
 id container
@@ -2925,6 +2927,7 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id replay
 id restart
 id reverse
 id reverseSawtooth
@@ -2998,7 +3001,17 @@ id stretch
 id submenuarrow
 id submit_area
 id supportScrollUp
+id t1
+id t2
+id t3
+id t4
+id t5
+id t6
+id t7
+id t8
+id t9
 id tabMode
+id tablero
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
 id tag_accessibility_heading
