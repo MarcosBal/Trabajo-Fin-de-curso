@@ -1,10 +1,12 @@
 package com.riberadeltajo.marcos.proyectofindecurso;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Tablero {
 
     public enum estado {Vacio, X, O}
+
     private estado[][] tablero;
     private estado jugador, IA;
     private int filasColumnas;
@@ -46,42 +48,42 @@ public class Tablero {
         this.IA = IA;
     }
 
-    private void rellenarTablero(){
+    private void rellenarTablero() {
         tablero = new estado[filasColumnas][filasColumnas];
-        for (int i = 0; i <3; i++) {
+        for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 tablero[i][j] = estado.Vacio;
             }
         }
     }
 
-    public String turno(){
+    public String turno() {
         Random r = new Random();
-        if(r.nextInt(2) == 0)
+        if (r.nextInt(2) == 0)
             return "IA";
         else
             return "J";
     }
 
-    public void movimiento(int x, int y, estado s, estado[][] tab){
+    public void movimiento(int x, int y, estado s, estado[][] tab) {
         tab[x][y] = s;
     }
 
-    public Posicion movimientoIA(estado[][] tabl){
+    public Posicion movimientoIA(estado[][] tabl) {
         Posicion posi = new Posicion();
-        if(jugador == estado.X){
+        if (jugador == estado.X) {
             IA = estado.O;
-        }else{
+        } else {
             IA = estado.X;
         }
         estado[][] copiaTablero;
         //Compruebo que la ia pueda ganar en el siguiente mov
-        for (int i = 0; i <3; i++) {
+        for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 copiaTablero = getCopiaTablero(tabl);
-                if(copiaTablero[i][j] == estado.Vacio){
+                if (copiaTablero[i][j] == estado.Vacio) {
                     movimiento(i, j, IA, copiaTablero);
-                    if(comprobarVictoria(copiaTablero, IA, i, j)){
+                    if (comprobarVictoria(copiaTablero, IA, i, j)) {
                         posi.setX(i);
                         posi.setY(j);
                         return posi;
@@ -94,9 +96,9 @@ public class Tablero {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 copiaTablero = getCopiaTablero(tabl);
-                if(copiaTablero[i][j] == estado.Vacio){
+                if (copiaTablero[i][j] == estado.Vacio) {
                     movimiento(i, j, jugador, copiaTablero);
-                    if(comprobarVictoria(copiaTablero, jugador, i, j)){
+                    if (comprobarVictoria(copiaTablero, jugador, i, j)) {
                         posi.setX(i);
                         posi.setY(j);
                         return posi;
@@ -107,14 +109,12 @@ public class Tablero {
 
         //Intenta coger las esquinas si estan libres
         posi = escogerEsquina(tabl);
-        if (posi != null){
-            //movimiento(posi.getX(), posi.getY(), IA, tabl);
+        if (posi != null) {
             return posi;
         }
 
         //Intenta coger el centro si está libre
         if (tabl[1][1] == estado.Vacio) {
-            //movimiento(1, 1, IA, tabl);
             posi.setX(1);
             posi.setY(1);
             return posi;
@@ -126,7 +126,7 @@ public class Tablero {
         return posi;
     }
 
-    private estado[][] getCopiaTablero (estado[][] tab){
+    private estado[][] getCopiaTablero(estado[][] tab) {
         estado[][] copia = new estado[3][3];
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -138,32 +138,32 @@ public class Tablero {
 
     public boolean comprobarVictoria(estado[][] tab, estado s, int x, int y) {
         //Comprobar columnas
-        for(int i = 0; i < filasColumnas; i++){
-            if(tab[x][i] != s)
+        for (int i = 0; i < filasColumnas; i++) {
+            if (tab[x][i] != s)
                 break;
-            if(i == filasColumnas-1){
+            if (i == filasColumnas - 1) {
                 //report win for s
                 return true;
             }
         }
 
         //Comprobar filas
-        for(int i = 0; i < filasColumnas; i++){
-            if(tab[i][y] != s)
+        for (int i = 0; i < filasColumnas; i++) {
+            if (tab[i][y] != s)
                 break;
-            if(i == filasColumnas-1){
+            if (i == filasColumnas - 1) {
                 //report win for s
                 return true;
             }
         }
 
         //Comprobar diagonal
-        if(x == y){
+        if (x == y) {
             //we're on a diagonal
-            for(int i = 0; i < filasColumnas; i++){
-                if(tab[i][i] != s)
+            for (int i = 0; i < filasColumnas; i++) {
+                if (tab[i][i] != s)
                     break;
-                if(i == filasColumnas-1){
+                if (i == filasColumnas - 1) {
                     //report win for s
                     return true;
                 }
@@ -171,11 +171,11 @@ public class Tablero {
         }
 
         //Comprobar la otra diagonal
-        if(x + y == filasColumnas - 1){
-            for(int i = 0; i < filasColumnas; i++){
-                if(tab[i][(filasColumnas-1)-i] != s)
+        if (x + y == filasColumnas - 1) {
+            for (int i = 0; i < filasColumnas; i++) {
+                if (tab[i][(filasColumnas - 1) - i] != s)
                     break;
-                if(i == filasColumnas-1){
+                if (i == filasColumnas - 1) {
                     //report win for s
                     return true;
                 }
@@ -185,76 +185,92 @@ public class Tablero {
     }
 
     private Posicion escogerLado(estado[][] tab) {
-        Posicion posi = new Posicion();
+        ArrayList<Posicion> posis = new ArrayList<>();
         if (tab[0][1] == estado.Vacio){
+            Posicion posi = new Posicion();
             posi.setX(0);
             posi.setY(1);
-            return posi;
+            posis.add(posi);
         }
 
         if (tab[1][0] == estado.Vacio){
+            Posicion posi = new Posicion();
             posi.setX(1);
             posi.setY(0);
-            return posi;
+            posis.add(posi);
         }
 
         if (tab[2][1] == estado.Vacio){
+            Posicion posi = new Posicion();
             posi.setX(2);
             posi.setY(1);
-            return posi;
+            posis.add(posi);
         }
 
         if (tab[1][2] == estado.Vacio){
+            Posicion posi = new Posicion();
             posi.setX(1);
             posi.setY(2);
-            return posi;
+            posis.add(posi);
         }
-
-        return null;
+        if (posis.size() != 0){
+            Random r = new Random();
+            return posis.get(r.nextInt(posis.size()));
+        }else{
+            return null;
+        }
     }
 
     private Posicion escogerEsquina(estado[][] tab) {
-        Posicion posi = new Posicion();
+        ArrayList<Posicion> posis = new ArrayList<>();
         if (tab[0][0] == estado.Vacio){
+            Posicion posi = new Posicion();
             posi.setX(0);
             posi.setY(0);
-            return posi;
+            posis.add(posi);
         }
 
         if (tab[0][2] == estado.Vacio){
+            Posicion posi = new Posicion();
             posi.setX(0);
             posi.setY(2);
-            return posi;
+            posis.add(posi);
         }
 
         if (tab[2][0] == estado.Vacio){
+            Posicion posi = new Posicion();
             posi.setX(2);
             posi.setY(0);
-            return posi;
+            posis.add(posi);
         }
 
         if (tab[2][2] == estado.Vacio){
+            Posicion posi = new Posicion();
             posi.setX(2);
             posi.setY(2);
-            return posi;
+            posis.add(posi);
         }
-
-        return null;
+        if (posis.size() != 0){
+            Random r = new Random();
+            return posis.get(r.nextInt(posis.size()));
+        }else{
+            return null;
+        }
     }
 
-    public boolean comprobarEmpate(int numeroMov){
+    public boolean comprobarEmpate(int numeroMov) {
         return numeroMov == (Math.pow(filasColumnas, 2) - 1);
     }
 
-    public void reiniciar(){
-        for (int i = 0; i <3; i++) {
+    public void reiniciar() {
+        for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 tablero[i][j] = estado.Vacio;
             }
         }
     }
 
-    public boolean comprobarPosi(int x, int y){
+    public boolean comprobarPosi(int x, int y) {
         return tablero[x][y] == estado.Vacio;
     }
 }

@@ -2,6 +2,7 @@ package com.riberadeltajo.marcos.proyectofindecurso;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
 
 import android.graphics.Color;
 import android.graphics.Point;
@@ -15,6 +16,7 @@ import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import java.util.Arrays;
 
@@ -70,55 +72,55 @@ public class GameIA extends AppCompatActivity implements View.OnClickListener {
         if (!win) {
             if (v.getId() == t1.getId()) {
                 if (t.comprobarPosi(0,2)) {
-                    v.setBackgroundColor(Color.RED);
+                    t1.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.x_icon));
                     movimientoJugador(0, 2);
                 }
             }
             if (v.getId() == t2.getId()) {
                 if (t.comprobarPosi(1,2)) {
-                    v.setBackgroundColor(Color.RED);
+                    t2.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.x_icon));
                     movimientoJugador(1, 2);
                 }
             }
             if (v.getId() == t3.getId()) {
                 if (t.comprobarPosi(2,2)) {
-                    v.setBackgroundColor(Color.RED);
+                    t3.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.x_icon));
                     movimientoJugador(2, 2);
                 }
             }
             if (v.getId() == t4.getId()) {
                 if (t.comprobarPosi(0,1)) {
-                    v.setBackgroundColor(Color.RED);
+                    t4.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.x_icon));
                     movimientoJugador(0, 1);
                 }
             }
             if (v.getId() == t5.getId()) {
                 if (t.comprobarPosi(1,1)) {
-                    v.setBackgroundColor(Color.RED);
+                    t5.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.x_icon));
                     movimientoJugador(1, 1);
                 }
             }
             if (v.getId() == t6.getId()) {
                 if (t.comprobarPosi(2,1)) {
-                    v.setBackgroundColor(Color.RED);
+                    t6.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.x_icon));
                     movimientoJugador(2, 1);
                 }
             }
             if (v.getId() == t7.getId()) {
                 if (t.comprobarPosi(0,0)) {
-                    v.setBackgroundColor(Color.RED);
+                    t7.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.x_icon));
                     movimientoJugador(0, 0);
                 }
             }
             if (v.getId() == t8.getId()) {
                 if (t.comprobarPosi(1,0)) {
-                    v.setBackgroundColor(Color.RED);
+                    t8.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.x_icon));
                     movimientoJugador(1, 0);
                 }
             }
             if (v.getId() == t9.getId()) {
                 if (t.comprobarPosi(2,0)) {
-                    v.setBackgroundColor(Color.RED);
+                    t9.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.x_icon));
                     movimientoJugador(2, 0);
                 }
             }
@@ -131,15 +133,15 @@ public class GameIA extends AppCompatActivity implements View.OnClickListener {
     private void reiniciar(){
         win = false;
         movi = 0;
-        t1.setBackgroundColor(Color.WHITE);
-        t2.setBackgroundColor(Color.WHITE);
-        t3.setBackgroundColor(Color.WHITE);
-        t4.setBackgroundColor(Color.WHITE);
-        t5.setBackgroundColor(Color.WHITE);
-        t6.setBackgroundColor(Color.WHITE);
-        t7.setBackgroundColor(Color.WHITE);
-        t8.setBackgroundColor(Color.WHITE);
-        t9.setBackgroundColor(Color.WHITE);
+        t1.setImageBitmap(null);
+        t2.setImageBitmap(null);
+        t3.setImageBitmap(null);
+        t4.setImageBitmap(null);
+        t5.setImageBitmap(null);
+        t6.setImageBitmap(null);
+        t7.setImageBitmap(null);
+        t8.setImageBitmap(null);
+        t9.setImageBitmap(null);
         t.reiniciar();
         if (t.turno().equals("IA")){
             movimientoIA();
@@ -154,9 +156,11 @@ public class GameIA extends AppCompatActivity implements View.OnClickListener {
             if (!t.comprobarEmpate(movi)){
                 movimientoIA();
             }else{
+                Toast.makeText(this, "Has quedado EMPATE", Toast.LENGTH_SHORT).show();
                 win = true;
             }
         }else{
+            Toast.makeText(this, "Has GANADO a la IA", Toast.LENGTH_SHORT).show();
             win = true;
         }
     }
@@ -169,40 +173,42 @@ public class GameIA extends AppCompatActivity implements View.OnClickListener {
         pintarIA(p);
         if(!t.comprobarVictoria(t.getTablero(), t.getIA(), p.getX(),p.getY())){
             if (t.comprobarEmpate(movi)){
+                Toast.makeText(this, "Has quedado EMPATE", Toast.LENGTH_SHORT).show();
                 win = true;
             }
         }else{
+            Toast.makeText(this, "La IA te ha GANADO", Toast.LENGTH_SHORT).show();
             win = true;
         }
     }
 
     private void pintarIA(Posicion p) {
         if(p.getX() == 0 && p.getY() == 2){
-            t1.setBackgroundColor(Color.BLUE);
+            t1.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.o_icon));
         }
         if(p.getX() == 1 && p.getY() == 2){
-            t2.setBackgroundColor(Color.BLUE);
+            t2.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.o_icon));
         }
         if(p.getX() == 2 && p.getY() == 2){
-            t3.setBackgroundColor(Color.BLUE);
+            t3.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.o_icon));
         }
         if(p.getX() == 0 && p.getY() == 1){
-            t4.setBackgroundColor(Color.BLUE);
+            t4.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.o_icon));
         }
         if(p.getX() == 1 && p.getY() == 1){
-            t5.setBackgroundColor(Color.BLUE);
+            t5.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.o_icon));
         }
         if(p.getX() == 2 && p.getY() == 1){
-            t6.setBackgroundColor(Color.BLUE);
+            t6.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.o_icon));
         }
         if(p.getX() == 0 && p.getY() == 0){
-            t7.setBackgroundColor(Color.BLUE);
+            t7.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.o_icon));
         }
         if(p.getX() == 1 && p.getY() == 0){
-            t8.setBackgroundColor(Color.BLUE);
+            t8.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.o_icon));
         }
         if(p.getX() == 2 && p.getY() == 0){
-            t9.setBackgroundColor(Color.BLUE);
+            t9.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.o_icon));
         }
     }
 }
