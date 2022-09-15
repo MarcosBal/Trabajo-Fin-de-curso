@@ -25,12 +25,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.annotations.Nullable;
-import com.google.firebase.firestore.auth.User;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    TextView tvNotLogin;
-    SignInButton signInButton;
+    Button tvNotLogin;
+    Button signInButton;
     Button signOutButton;
     GoogleSignInClient mGoogleSignInClient;
     private final int RC_SING_IN=102;
@@ -48,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setTheme(R.style.ProyectoFinDeCurso);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        tvNotLogin = findViewById(R.id.tvNotLogin);
+        tvNotLogin = findViewById(R.id.btnNotLogin);
         tvNotLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
