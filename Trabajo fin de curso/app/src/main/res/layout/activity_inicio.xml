@@ -7,15 +7,61 @@
     tools:context=".InicioActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintPvP"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/constraintNext"
+        android:layout_width="180dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="100dp"
         android:background="@drawable/borde_negro"
-        app:layout_constraintBottom_toTopOf="@+id/constraintPvIA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintPvIA">
+
+        <TextView
+            android:id="@+id/tvNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Coming Soon"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie4"
+        android:layout_width="180dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/ivAtras"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="animations/puños.json"
+        app:lottie_loop="false" />
+
+    <ImageView
+        android:id="@+id/ivAtras"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/flecha" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintPvP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/borde_negro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lottie4">
 
         <ImageView
             android:id="@+id/ivPlayer"
@@ -61,10 +107,9 @@
         android:id="@+id/constraintPvIA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         android:background="@drawable/borde_negro"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintPvP">
 
@@ -93,7 +138,7 @@
             app:srcCompat="@drawable/ic_person" />
 
         <TextView
-            android:id="@+id/tvVS2"
+            android:id="@+id/tvNext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"

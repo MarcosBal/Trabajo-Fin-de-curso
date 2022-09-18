@@ -1,35 +1,18 @@
 package com.riberadeltajo.marcos.proyectofindecurso;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.constraintlayout.widget.ConstraintSet;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
-
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.SignInButton;
-import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthCredential;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.GoogleAuthProvider;
+import android.widget.ImageView;
 
 public class InicioActivity extends AppCompatActivity implements View.OnClickListener {
 
     ConstraintLayout constraintPvIA;
     ConstraintLayout constraintPvP;
+    ImageView btnAtras;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,21 +21,25 @@ public class InicioActivity extends AppCompatActivity implements View.OnClickLis
 
         constraintPvIA = findViewById(R.id.constraintPvIA);
         constraintPvP = findViewById(R.id.constraintPvP);
-
+        btnAtras = findViewById(R.id.ivAtras);
+        btnAtras.setOnClickListener(this);
         constraintPvP.setOnClickListener(this);
         constraintPvIA.setOnClickListener(this);
 
     }
 
-    private void lanzarActividad(){
-        Intent i = new Intent(this, GameIA.class);
-        startActivity(i);
-    }
-
     @Override
     public void onClick(View v) {
         if (v.getId() == constraintPvIA.getId()){
-            lanzarActividad();
+            Intent i = new Intent(this, PreGameIA.class);
+            startActivity(i);
+        }
+        if (v.getId() == constraintPvP.getId()){
+            Intent i = new Intent(this, PreGamePVP.class);
+            startActivity(i);
+        }
+        if (v.getId() == btnAtras.getId()){
+            onBackPressed();
         }
 
     }

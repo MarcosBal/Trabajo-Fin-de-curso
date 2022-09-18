@@ -259,7 +259,7 @@ public class Tablero {
     }
 
     public boolean comprobarEmpate(int numeroMov) {
-        return numeroMov == (Math.pow(filasColumnas, 2) - 1);
+        return numeroMov == (Math.pow(filasColumnas, 2));
     }
 
     public void reiniciar() {

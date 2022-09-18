@@ -10,13 +10,23 @@
         android:supportsRtl="true"
         android:theme="@style/ProyectoFinDeCurso">
         <activity
+            android:name=".GamePVP"
+            android:exported="true" />
+        <activity
+            android:name=".PreGamePVP"
+            android:exported="true" />
+        <activity
+            android:name=".PreGameIA"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".GameIA"
-            android:screenOrientation="portrait"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".InicioActivity"
-            android:screenOrientation="portrait"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
