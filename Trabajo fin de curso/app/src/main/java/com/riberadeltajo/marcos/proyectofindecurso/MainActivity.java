@@ -51,6 +51,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvNotLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (mAuth.getCurrentUser() != null)
+                    signOut();
                 lanzarSiguienteActividad();
             }
         });
@@ -86,6 +88,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
+                Toast.makeText(this,"Ha ocurrido un error intentalo más tarde ",Toast.LENGTH_LONG).show();
                 Log.w("RIBERADELTAJO", "Google sign in failed", e);
 
             }
@@ -136,6 +139,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         updateUI(null);
+                        Toast.makeText(getApplicationContext(), "Se ha cerrado sesion correctamente", Toast.LENGTH_SHORT).show();
                     }
                 });
     }

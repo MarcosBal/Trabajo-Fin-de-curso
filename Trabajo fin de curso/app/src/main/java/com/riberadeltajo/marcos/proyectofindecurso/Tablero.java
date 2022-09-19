@@ -8,7 +8,7 @@ public class Tablero {
     public enum estado {Vacio, X, O}
 
     private estado[][] tablero;
-    private estado jugador, IA;
+    private estado jugador, IA, jugador2;
     private int filasColumnas;
 
     public Tablero(int filasColumnas) {
@@ -40,6 +40,14 @@ public class Tablero {
         this.jugador = jugador;
     }
 
+    public estado getJugador2() {
+        return jugador2;
+    }
+
+    public void setJugador2(estado jugador) {
+        this.jugador2 = jugador2;
+    }
+
     public estado getIA() {
         return IA;
     }
@@ -63,6 +71,22 @@ public class Tablero {
             return "IA";
         else
             return "J";
+    }
+
+    public String turnoJugadores() {
+        Random r = new Random();
+        if (r.nextInt(2) == 0)
+            return "J1";
+        else
+            return "J2";
+    }
+
+    public String cambiarTurno(String turno) {
+        if (turno.equals("J1")){
+            return "J2";
+        }else{
+            return "J1";
+        }
     }
 
     public void movimiento(int x, int y, estado s, estado[][] tab) {
