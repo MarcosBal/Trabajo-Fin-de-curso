@@ -15,17 +15,19 @@ public class GameIA extends AppCompatActivity implements View.OnClickListener {
 
     Tablero t;
     int numeroFilasYColumnas = 3;
-    int movi = 0, pIA = 0, pJ = 0;
+    int movi = 0, pIA = 0, pJ = 0, empates = 0;
     boolean win = false;
     ImageView t1,t2,t3,t4,t5,t6,t7,t8,t9,ivAtras,ivIAIcon,ivPlayerIcon;
     Button btnReplay;
     TextView tvPlayerP,tvIAP,tvNombre;
+    FirebaseController firebase;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_ia);
+        firebase = new FirebaseController();
         instanciarVistas();
         empezarJuego(numeroFilasYColumnas);
     }
@@ -190,13 +192,16 @@ public class GameIA extends AppCompatActivity implements View.OnClickListener {
                 movimientoIA();
             }else{
                 Toast.makeText(this, "Has quedado EMPATE", Toast.LENGTH_SHORT).show();
+                empates++;
                 win = true;
+                firebase.actualizarDatos(pJ,pIA,empates);
             }
         }else{
             Toast.makeText(this, "Has GANADO a la IA", Toast.LENGTH_SHORT).show();
             pJ++;
             tvPlayerP.setText(pJ+"");
             win = true;
+            firebase.actualizarDatos(pJ,pIA,empates);
         }
     }
 
@@ -209,13 +214,16 @@ public class GameIA extends AppCompatActivity implements View.OnClickListener {
         if(!t.comprobarVictoria(t.getTablero(), t.getIA(), p.getX(),p.getY())){
             if (t.comprobarEmpate(movi)){
                 Toast.makeText(this, "Has quedado EMPATE", Toast.LENGTH_SHORT).show();
+                empates++;
                 win = true;
+                firebase.actualizarDatos(pJ,pIA,empates);
             }
         }else{
             Toast.makeText(this, "La IA te ha GANADO", Toast.LENGTH_SHORT).show();
             pIA++;
             tvIAP.setText(pIA+"");
             win = true;
+            firebase.actualizarDatos(pJ,pIA,empates);
         }
     }
 

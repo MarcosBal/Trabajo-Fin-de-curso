@@ -22,25 +22,25 @@ public class GamePVP extends AppCompatActivity implements View.OnClickListener {
 
     Tablero t;
     int numeroFilasYColumnas = 3;
-    int movi = 0, pJ = 0, pJ2 = 0;
+    int movi = 0, pJ = 0, pJ2 = 0, empates = 0;
     boolean win = false;
     String turno, nombre, nombre2;
     ConstraintLayout xLayout,oLayout;
     ImageView t1,t2,t3,t4,t5,t6,t7,t8,t9,ivAtras,ivPlayerIcon,ivPlayerIcon2;
     Button btnReplay;
     TextView tvPlayerP, tvPlayerP2, tvNombre2, tvNombre;
-    DatabaseReference mRootReference;
+    FirebaseController firebase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_pvp);
+        firebase = new FirebaseController();
         instanciarVistas();
         empezarJuego(numeroFilasYColumnas);
     }
 
     private void instanciarVistas(){
-        mRootReference = FirebaseDatabase.getInstance().getReference();
         t1 = findViewById(R.id.t1);
         t2 = findViewById(R.id.t2);
         t3 = findViewById(R.id.t3);
@@ -197,8 +197,10 @@ public class GamePVP extends AppCompatActivity implements View.OnClickListener {
             t.movimiento(x, y, t.getJugador(), t.getTablero());
             if(!t.comprobarVictoria(t.getTablero(), t.getJugador(), x, y)){
                 if (t.comprobarEmpate(movi)){
+                    empates++;
                     Toast.makeText(this, "Has quedado EMPATE", Toast.LENGTH_SHORT).show();
                     win = true;
+                    firebase.actualizarDatos(pJ,pJ2,empates);
                 }
             }else{
                 if (nombre!= null && !nombre.equals("") && nombre2!= null && !nombre2.equals("")) {
@@ -209,6 +211,7 @@ public class GamePVP extends AppCompatActivity implements View.OnClickListener {
                 pJ++;
                 tvPlayerP.setText(pJ+"");
                 win = true;
+                firebase.actualizarDatos(pJ,pJ2,empates);
             }
         }else {
             turno = t.cambiarTurno("J2");
@@ -216,8 +219,10 @@ public class GamePVP extends AppCompatActivity implements View.OnClickListener {
             t.movimiento(x, y, t.getJugador2(), t.getTablero());
             if(!t.comprobarVictoria(t.getTablero(), t.getJugador2(), x, y)){
                 if (t.comprobarEmpate(movi)){
+                    empates++;
                     Toast.makeText(this, "Habeis quedado EMPATE", Toast.LENGTH_SHORT).show();
                     win = true;
+                    firebase.actualizarDatos(pJ,pJ2,empates);
                 }
             }else{
                 if (nombre!= null && !nombre.equals("") && nombre2!= null && !nombre2.equals("")) {
@@ -228,6 +233,7 @@ public class GamePVP extends AppCompatActivity implements View.OnClickListener {
                 pJ2++;
                 tvPlayerP2.setText(pJ2+"");
                 win = true;
+                firebase.actualizarDatos(pJ,pJ2,empates);
             }
         }
 
@@ -267,9 +273,4 @@ public class GamePVP extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
-    private void subirDatosFirebase(){
-        Map<String, Object> datosUsuario = new HashMap<>();
-        datosUsuario.put("NombreUsuario", nombre);
-        mRootReference.child("Usuarios").push().setValue(datosUsuario);
-    }
 }
