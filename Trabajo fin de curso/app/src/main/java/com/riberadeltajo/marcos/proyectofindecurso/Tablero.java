@@ -44,7 +44,7 @@ public class Tablero {
         return jugador2;
     }
 
-    public void setJugador2(Ficha jugador) {
+    public void setJugador2(Ficha jugador2) {
         this.jugador2 = jugador2;
     }
 
