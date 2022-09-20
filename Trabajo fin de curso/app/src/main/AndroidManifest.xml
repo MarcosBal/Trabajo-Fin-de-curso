@@ -11,10 +11,12 @@
         android:theme="@style/ProyectoFinDeCurso">
         <activity
             android:name=".GamePVP"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".PreGamePVP"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".PreGameIA"
             android:exported="true"

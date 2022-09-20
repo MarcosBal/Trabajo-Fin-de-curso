@@ -12,12 +12,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.HashMap;
-import java.util.Map;
-
 public class GamePVP extends AppCompatActivity implements View.OnClickListener {
 
     Tablero t;
@@ -85,13 +79,13 @@ public class GamePVP extends AppCompatActivity implements View.OnClickListener {
         }
         String jugador = getIntent().getStringExtra("player1");
         if (jugador.equals("x")){
-            t.setJugador(Tablero.estado.X);
-            t.setJugador2(Tablero.estado.O);
+            t.setJugador(Tablero.Ficha.X);
+            t.setJugador2(Tablero.Ficha.O);
             ivPlayerIcon2.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.o_icon));
             ivPlayerIcon.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.x_icon));
         }else{
-            t.setJugador(Tablero.estado.O);
-            t.setJugador2(Tablero.estado.X);
+            t.setJugador(Tablero.Ficha.O);
+            t.setJugador2(Tablero.Ficha.X);
             ivPlayerIcon2.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.x_icon));
             ivPlayerIcon.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.o_icon));
         }
@@ -175,13 +169,13 @@ public class GamePVP extends AppCompatActivity implements View.OnClickListener {
 
     private Drawable pintarJugador(){
         if (turno.equals("J1")) {
-            if (t.getJugador() == Tablero.estado.X) {
+            if (t.getJugador() == Tablero.Ficha.X) {
                 return ContextCompat.getDrawable(this, R.drawable.x_icon);
             } else {
                 return ContextCompat.getDrawable(this, R.drawable.o_icon);
             }
         }else{
-            if (t.getJugador2() == Tablero.estado.X) {
+            if (t.getJugador2() == Tablero.Ficha.X) {
                 return ContextCompat.getDrawable(this, R.drawable.x_icon);
             } else {
                 return ContextCompat.getDrawable(this, R.drawable.o_icon);
@@ -211,7 +205,7 @@ public class GamePVP extends AppCompatActivity implements View.OnClickListener {
                 pJ++;
                 tvPlayerP.setText(pJ+"");
                 win = true;
-                firebase.actualizarDatos(pJ,pJ2,empates);
+                firebase.actualizarDatos(1,0,0);
             }
         }else {
             turno = t.cambiarTurno("J2");
@@ -222,7 +216,7 @@ public class GamePVP extends AppCompatActivity implements View.OnClickListener {
                     empates++;
                     Toast.makeText(this, "Habeis quedado EMPATE", Toast.LENGTH_SHORT).show();
                     win = true;
-                    firebase.actualizarDatos(pJ,pJ2,empates);
+                    firebase.actualizarDatos(0,0,1);
                 }
             }else{
                 if (nombre!= null && !nombre.equals("") && nombre2!= null && !nombre2.equals("")) {
@@ -233,7 +227,7 @@ public class GamePVP extends AppCompatActivity implements View.OnClickListener {
                 pJ2++;
                 tvPlayerP2.setText(pJ2+"");
                 win = true;
-                firebase.actualizarDatos(pJ,pJ2,empates);
+                firebase.actualizarDatos(0,1,0);
             }
         }
 

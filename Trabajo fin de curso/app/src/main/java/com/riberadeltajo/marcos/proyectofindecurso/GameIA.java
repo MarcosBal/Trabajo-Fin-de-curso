@@ -70,11 +70,11 @@ public class GameIA extends AppCompatActivity implements View.OnClickListener {
         }
         String jugador = getIntent().getStringExtra("player");
         if (jugador.equals("x")){
-            t.setJugador(Tablero.estado.X);
+            t.setJugador(Tablero.Ficha.X);
             ivIAIcon.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.o_icon));
             ivPlayerIcon.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.x_icon));
         }else{
-            t.setJugador(Tablero.estado.O);
+            t.setJugador(Tablero.Ficha.O);
             ivIAIcon.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.x_icon));
             ivPlayerIcon.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.o_icon));
         }
@@ -151,7 +151,7 @@ public class GameIA extends AppCompatActivity implements View.OnClickListener {
     }
 
     private Drawable pintarJugador(){
-        if (t.getJugador() == Tablero.estado.X){
+        if (t.getJugador() == Tablero.Ficha.X){
             return ContextCompat.getDrawable(this, R.drawable.x_icon);
         }else{
             return ContextCompat.getDrawable(this, R.drawable.o_icon);
@@ -159,7 +159,7 @@ public class GameIA extends AppCompatActivity implements View.OnClickListener {
     }
 
     private Drawable pintarIA(){
-        if (t.getIA() == Tablero.estado.X){
+        if (t.getIA() == Tablero.Ficha.X){
             return ContextCompat.getDrawable(this, R.drawable.x_icon);
         }else{
             return ContextCompat.getDrawable(this, R.drawable.o_icon);
@@ -194,14 +194,14 @@ public class GameIA extends AppCompatActivity implements View.OnClickListener {
                 Toast.makeText(this, "Has quedado EMPATE", Toast.LENGTH_SHORT).show();
                 empates++;
                 win = true;
-                firebase.actualizarDatos(pJ,pIA,empates);
+                firebase.actualizarDatos(0,0,1);
             }
         }else{
             Toast.makeText(this, "Has GANADO a la IA", Toast.LENGTH_SHORT).show();
             pJ++;
             tvPlayerP.setText(pJ+"");
             win = true;
-            firebase.actualizarDatos(pJ,pIA,empates);
+            firebase.actualizarDatos(1,0,0);
         }
     }
 
@@ -216,14 +216,14 @@ public class GameIA extends AppCompatActivity implements View.OnClickListener {
                 Toast.makeText(this, "Has quedado EMPATE", Toast.LENGTH_SHORT).show();
                 empates++;
                 win = true;
-                firebase.actualizarDatos(pJ,pIA,empates);
+                firebase.actualizarDatos(0,0,1);
             }
         }else{
             Toast.makeText(this, "La IA te ha GANADO", Toast.LENGTH_SHORT).show();
             pIA++;
             tvIAP.setText(pIA+"");
             win = true;
-            firebase.actualizarDatos(pJ,pIA,empates);
+            firebase.actualizarDatos(0,1,0);
         }
     }
 
