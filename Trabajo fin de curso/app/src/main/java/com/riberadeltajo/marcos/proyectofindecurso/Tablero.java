@@ -146,7 +146,6 @@ public class Tablero {
 
         //Intenta coger los lados si entan libres
         posi = escogerLado(tabl);
-        //movimiento(posi.getX(), posi.getY(), IA, tabl);
         return posi;
     }
 
@@ -166,7 +165,6 @@ public class Tablero {
             if (tab[x][i] != s)
                 break;
             if (i == filasColumnas - 1) {
-                //report win for s
                 return true;
             }
         }
@@ -176,19 +174,16 @@ public class Tablero {
             if (tab[i][y] != s)
                 break;
             if (i == filasColumnas - 1) {
-                //report win for s
                 return true;
             }
         }
 
         //Comprobar diagonal
         if (x == y) {
-            //we're on a diagonal
             for (int i = 0; i < filasColumnas; i++) {
                 if (tab[i][i] != s)
                     break;
                 if (i == filasColumnas - 1) {
-                    //report win for s
                     return true;
                 }
             }
@@ -200,7 +195,6 @@ public class Tablero {
                 if (tab[i][(filasColumnas - 1) - i] != s)
                     break;
                 if (i == filasColumnas - 1) {
-                    //report win for s
                     return true;
                 }
             }
